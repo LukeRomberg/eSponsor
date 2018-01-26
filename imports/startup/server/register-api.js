@@ -25,7 +25,7 @@ const typeDefs = [testSchema, ResolutionsSchema];
 const TestResolver = {
   Query: {
     hi() {
-      return 'GET FUCKED BITCH'
+      return 'Welcome to the start of something huge!'
     }
   }
 }

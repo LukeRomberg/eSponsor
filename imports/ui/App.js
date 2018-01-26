@@ -1,11 +1,13 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
+import Header from './Components/Header';
 
 const App = ({data}) => {
   if(data.loading) return null;
 return (
   <div>
+    <Header />
     <h1>{data.hi}</h1>
     <ul>
       {data.resolutions.map(resolution => (
