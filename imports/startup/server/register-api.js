@@ -5,7 +5,7 @@ import merge from 'lodash/merge'
 // This is an imported resolver that goes into resolvers
 import ResolutionsResolvers from '../../api/resolutions/resolvers'
 
-// This is imported schema that goes to typeDefs
+// This is imported schema that goes to typeDefs.
 import ResolutionsSchema from '../../api/resolutions/Resolutions.graphql';
 
 //End of imports
