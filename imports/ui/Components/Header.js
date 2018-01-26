@@ -1,7 +1,7 @@
 import React from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
-import { Navbar, Nav, NavItem, NavDropdown, FormGroup, Form, FormControl, Button, MenuItem, Menu } from 'react-bootstrap'
+import { Navbar, Nav, NavItem, NavDropdown, FormGroup, Form, FormControl, Button, MenuItem, Menu, Tab, Tabs } from 'react-bootstrap'
 
 const Header = ({data}) => {
 return (
@@ -15,15 +15,14 @@ return (
   </Navbar.Header>
   <Navbar.Collapse>
     <Nav>
-      <NavItem eventKey={1} href="#">
-        Gamers
-      </NavItem>
-      <NavItem eventKey={2} href="#">
-        Sponsors
-      </NavItem>
-    <NavItem eventKey={3} href="#">
-        My Account
-    </NavItem>
+      <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
+      <Tab eventKey={1} title="Gamers">
+      </Tab>
+      <Tab eventKey={2} title="Gamers">
+      </Tab>
+      <Tab eventKey={3} title="My Account">
+      </Tab>
+    </Tabs>
     </Nav>
     <Nav pullRight>
       <NavItem eventKey={1} href="#">
