@@ -8,19 +8,15 @@ import { withApollo } from 'react-apollo';
 import Header from './Components/Header';
 import Main from './Components/Main';
 import ResolutionForm from './Components/ResolutionForm'
-import GamerLogin from './Components/GamerLogin'
-import GamerCreateAccount from './Components/GamerCreateAccount'
 
 
-const App = ({ loading, resolutions, client }) => {
+const App = ({ loading, resolutions, client, user }) => {
 if(loading) return null;
 return (
   <div>
-    <Header client={client}/>
+    <Header client={client} user={user}/>
     <Main client={client}/>
     <ResolutionForm client={client}/>
-    <GamerLogin client={client}/>
-    <GamerCreateAccount client={client}/>
     <ul>
       {resolutions.map(resolution => (
         <li key={resolution._id}>
@@ -37,6 +33,9 @@ const resolutionsQuery = gql `
     resolutions{
       _id
       name
+    }
+    user {
+      _id
     }
   }
 `;

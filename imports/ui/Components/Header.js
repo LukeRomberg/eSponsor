@@ -15,6 +15,8 @@ import {
   Tab,
   Tabs
 } from 'react-bootstrap'
+import GamerLogin from './GamerLogin'
+import GamerCreateAccount from './GamerCreateAccount'
 
 export default class Header extends Component {
 
@@ -36,15 +38,20 @@ export default class Header extends Component {
             </Tabs>
           </Nav>
           <Nav pullRight>
+            { this.props.user._id ? (
             <NavItem eventKey={1} onClick={() => {
                 Meteor.logout()
                 this.props.client.resetStore();
               }}>
               Logout
             </NavItem>
+          ) : (
+            <GamerLogin client={this.props.client} />
+          ) }
             <NavItem eventKey={2} href="#">
               Create Account
             </NavItem>
+            <GamerCreateAccount client={this.props.client} />
           </Nav>
         </Navbar.Collapse>
       </Navbar>
