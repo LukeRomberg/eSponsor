@@ -24,4 +24,4 @@ class GamerLogin extends React.Component {
   }
 }
 
-module export default GamerLogin;
+export default GamerLogin;
