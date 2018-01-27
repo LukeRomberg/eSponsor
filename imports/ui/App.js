@@ -5,15 +5,15 @@ import Header from './Components/Header';
 import Main from './Components/Main';
 import ResolutionForm from './Components/ResolutionForm'
 
-const App = ({data}) => {
-if(data.loading) return null;
+const App = ({ loading, resolutions }) => {
+if(loading) return null;
 return (
   <div>
     <Header />
     <Main />
-    <ResolutionForm refetch={data.refetch} />
+    <ResolutionForm />
     <ul>
-      {data.resolutions.map(resolution => (
+      {resolutions.map(resolution => (
         <li key={resolution._id}>
           {resolution.name}
         </li>
@@ -22,8 +22,8 @@ return (
 </div>
 )}
 
-const hiQuery = gql `
-  {
+const resolutionsQuery = gql `
+  query Resolutions {
     hi
     resolutions{
       _id
@@ -32,4 +32,6 @@ const hiQuery = gql `
   }
 `;
 
-export default graphql(hiQuery)(App);
+export default graphql(resolutionsQuery,{
+  props: ({data})=> ({...data})
+})(App);
