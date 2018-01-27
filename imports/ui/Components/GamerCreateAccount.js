@@ -1,29 +1,29 @@
 import React, { Component } from 'react';
 import { Accounts } from 'meteor/accounts-base'
-import { withApollo } from 'react-apollo';
 import { FormGroup, FormControl, ControlLabel, HelpBlock } from 'react-bootstrap';
 
+class GamerLogin extends Component {
 
-export default class GamerLogin extends Component {
-
-  login = (e) => {
+  registerUser = (e) => {
     console.log(e)
     e.preventDefault()
-    Meteor.loginWithPassword(this.email.value, this.password.value,
-      (error) => {
-        if(!error){
-          this.props.client.resetStore();
-        }
+    Accounts.createUser({
+      email: this.email.value,
+      password: this.password.value
+    }, (error) => {
+      if(!error){
+        this.props.client.resetStore();
+      }
       console.log(error);
     })
   }
 
   render() {
     return (
-      <form onSubmit={this.login}>
+      <form onSubmit={this.registerUser}>
         <input type="email" ref={(input) => this.email = input} />
         <input type="password" ref={(input) => this.password = input} />
-        <button type="submit">Login User</button>
+        <button type="submit">Register User</button>
       </form>
       // <form>
       //   <FormGroup
@@ -44,3 +44,5 @@ export default class GamerLogin extends Component {
     );
   }
 }
+
+export default GamerLogin;

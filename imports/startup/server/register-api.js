@@ -38,5 +38,6 @@ const resolvers = merge(
 
 //prepare our schema for export into the apollo server
 const schema = makeExecutableSchema({typeDefs, resolvers})
+
 //export our schema into the apollo server
 createApolloServer({schema});
