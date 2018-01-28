@@ -3,43 +3,29 @@ import {makeExecutableSchema} from 'graphql-tools';
 import merge from 'lodash/merge'
 
 // This is an imported resolver that goes into resolvers.
+import GoalsResolvers from '../../api/goals/resolvers'
 import ResolutionsResolvers from '../../api/resolutions/resolvers'
 import UsersResolvers from '../../api/users/resolvers'
 
 // This is imported schema that goes to typeDefs.
+import GoalsSchema from '../../api/goals/Goal.graphql'
 import ResolutionsSchema from '../../api/resolutions/Resolutions.graphql';
 import UsersSchema from '../../api/users/User.graphql';
 
-//End of imports.
+//End of imports
 
 
-// An in-file test schema
-const testSchema = `
-  type Query {
-    hi: String
-    resolutions: [Resolution]
-    user: User
-  }
-`
 //Declaring the typeDefs, must be typed this way
 const typeDefs = [
-  testSchema,
+  GoalsSchema,
   ResolutionsSchema,
   UsersSchema
 ];
 
-// An in-file test resolver
-const TestResolver = {
-  Query: {
-    hi() {
-      return 'Welcome to the start of something huge!'
-    }
-  }
-}
 
 //Merging the in-house and imported resolvers
 const resolvers = merge(
-  TestResolver,
+  GoalsResolvers,
   ResolutionsResolvers,
   UsersResolvers
 )
