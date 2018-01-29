@@ -1,0 +1,68 @@
+html{
+  height: 100vh;
+  width: 100vw;
+}
+
+img{
+  width: 20vw;
+  height: 20vw;
+}
+
+.header{
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  height: 10vh;
+}
+
+.gamerslist{
+  padding: 5vw;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gamercard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: left;
+  width: 60vw;
+}
+
+.gamerinfo{
+  width: 30vw;
+}
+
+.welcome{
+  text-align: center;
+}
+
+.gamersocial{
+  display: flex;
+  flex-direction: column;
+}
+
+.sponsorslist{
+  padding: 5vw;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sponsorcard{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 60vw;
+}
+
+.sponsorinfo{
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+}

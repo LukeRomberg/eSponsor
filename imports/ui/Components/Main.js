@@ -2,10 +2,12 @@ import React from 'react';
 import gql from 'graphql-tag';
 import {graphql} from 'react-apollo';
 import { PageHeader } from 'react-bootstrap'
+import '../App.css'
+
 
 const Main = ({data}) => {
 return (
-  <PageHeader>
+  <PageHeader className="welcome">
     Welcome to eSponsor<br />
     <small>Where success meets talent</small>
   </PageHeader>

@@ -14,30 +14,34 @@ import {
   Menu,
   Tab,
   Tabs
-} from 'react-bootstrap'
-import GamerLogin from './GamerLogin'
-import GamerCreateAccount from './GamerCreateAccount'
+} from 'react-bootstrap';
+import GamerLogin from './GamerLogin';
+import GamerCreateAccount from './GamerCreateAccount';
+import '../App.css';
 
 export default class Header extends Component {
 
   render() {
-    return (<div>
+    return (<div className="header">
+      {/* <img src={myLogo} alt="eSponsor logo" /> */}
       <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#brand">eSponsor</a>
+            <a>eSponsor</a>
           </Navbar.Brand>
           <Navbar.Toggle/>
         </Navbar.Header>
         <Navbar.Collapse>
           <Nav>
-            <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
-              <Tab eventKey={1} title="Sponsors"></Tab>
-              <Tab eventKey={2} title="Gamers"></Tab>
-            </Tabs>
+            <NavItem>
+               Sponsors
+             </NavItem>
+             <NavItem>
+               Gamers
+             </NavItem>
           </Nav>
           <Nav pullRight>
-            {this.props.user._id ? (<NavItem eventKey={1} onClick={() => {
+            {this.props.user ? (<NavItem eventKey={1} onClick={() => {
                     Meteor.logout()
                     this.props.client.resetStore();
                   }}>
@@ -47,7 +51,7 @@ export default class Header extends Component {
                   <GamerLogin client={this.props.client}/>
                 </NavDropdown>)
             }
-            {!this.props.user._id ? (
+            {!this.props.user ? (
               <NavDropdown title="Create Account" id="basic-nav-dropdown">
                 <GamerCreateAccount client={this.props.client}/>
               </NavDropdown>

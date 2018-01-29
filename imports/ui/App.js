@@ -9,6 +9,9 @@ import Header from './Components/Header';
 import Main from './Components/Main';
 import ResolutionForm from './Components/ResolutionForm';
 import GoalForm from './Components/GoalForm';
+import SponsorList from './Components/SponsorList';
+import GamersList from './Components/GamersList';
+// import myLogo from 'logo.png';
 
 
 const App = ({ loading, resolutions, client, user }) => {
@@ -17,18 +20,19 @@ return (
   <div>
     <Header client={client} user={user}/>
     <Main client={client}/>
-    <ResolutionForm client={client}/>
+    <SponsorList />
+    <GamersList />
+    {/* <ResolutionForm client={client}/>
     <ul>
-      {resolutions.map(resolution => (
-        <li key={resolution._id}>
+      {resolutions.map((resolution, i) => (
+        <li key={i}>
           {resolution.name}
-          {console.log(resolution.goals)}
-          {resolution.goals.map(goal => {
-            return <GoalForm goal={goal}/>
+          {resolution.goals.map((goal, i) => {
+            return <GoalForm key={i} goal={goal}/>
           })}
         </li>
       ))}
-    </ul>
+    </ul> */}
 </div>
 )}
 
