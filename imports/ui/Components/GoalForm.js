@@ -22,9 +22,12 @@ class GoalForm extends Component {
       console.log(error);
     })
   }
+
   render(){
     return(
       <div>
+        <p>{this.props.goal.name}</p>
+        <input type="checkbox" checked={this.props.goal.completed} />
         <input type="text" ref={input => (this.name = input)} />
         <button onClick={this.submitForm}>Submit</button>
       </div>

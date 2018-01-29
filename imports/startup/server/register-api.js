@@ -7,7 +7,7 @@ import GoalsResolvers from '../../api/goals/resolvers'
 import ResolutionsResolvers from '../../api/resolutions/resolvers'
 import UsersResolvers from '../../api/users/resolvers'
 
-// This is imported schema that goes to typeDefs.
+// This is imported schema that goes to typeDefs
 import GoalsSchema from '../../api/goals/Goal.graphql'
 import ResolutionsSchema from '../../api/resolutions/Resolutions.graphql';
 import UsersSchema from '../../api/users/User.graphql';

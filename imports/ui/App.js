@@ -22,7 +22,10 @@ return (
       {resolutions.map(resolution => (
         <li key={resolution._id}>
           {resolution.name}
-          <GoalForm resolutionId={resolution._id} />
+          {console.log(resolution.goals)}
+          {resolution.goals.map(goal => {
+            return <GoalForm goal={goal}/>
+          })}
         </li>
       ))}
     </ul>
@@ -30,16 +33,21 @@ return (
 )}
 
 const resolutionsQuery = gql `
-  query Resolutions {
-    hi
-    resolutions{
-      _id
-      name
-    }
-    user {
-      _id
-    }
+query Resolutions{
+resolutions{
+  _id
+  name
+  goals{
+    _id
+    name
+    completed
   }
+}
+user{
+  _id
+  email
+}
+}
 `;
 
 export default graphql(resolutionsQuery,{
