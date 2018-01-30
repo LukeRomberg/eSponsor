@@ -3,9 +3,28 @@ html{
   width: 100vw;
 }
 
+.welcome{
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+  background-image: url("http://www.sporttechie.com/wp-content/uploads/2014/11/esports-major-league-gaming.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: sticky;
+  top: 11vh;
+}
+
 img{
   width: 20vw;
   height: 20vw;
+}
+
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .header{
@@ -13,15 +32,59 @@ img{
   top: 0;
   width: 100vw;
   height: 10vh;
+  z-index: 5;
+}
+
+.navbar-inverse{
+  background-color: #4f4f4f;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+  font-size: 20px;
+  padding: 32px;
+  color: white;
+}
+
+.nav{
+  margin: 0;
+  padding: 0;
+  color: black;
+}
+
+.header img{
+  height: 90px;
+  width: 292px;
+}
+
+.gamersignup{
+  width: 60vw;
+}
+
+.gamerregisterbutton{
+  padding: 10px;
+  display: flex;
+  align-self: center;
+  text-align: center;
+}
+
+.h1, h1{
+  padding: 5vh;
+  color: white;
+  text-shadow: 0px 0px 20px black;
+  font-size: 65px;
 }
 
 .gamerslist{
   padding: 5vw;
+  padding-top: 0;
   text-align: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  top: 75vh;
+  background-color: #000000c2;
 }
 
 .gamercard{
@@ -30,19 +93,30 @@ img{
   justify-content: space-around;
   text-align: left;
   width: 60vw;
+  display: flex;
+  background-color: #4f4f4f;
+  color: white;
 }
 
 .gamerinfo{
   width: 30vw;
 }
 
-.welcome{
-  text-align: center;
+.gamerinfo h5{
+  font-size: 20px;
+  /*font-weight: bold;*/
+}
+
+.gamerinfo h6{
+  font-style: italic;
 }
 
 .gamersocial{
   display: flex;
   flex-direction: column;
+}
+.gamersocial a{
+  color: white;
 }
 
 .sponsorslist{
@@ -52,6 +126,9 @@ img{
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  top: 10vh;
+  background-color: #000000c2;
 }
 
 .sponsorcard{
@@ -59,6 +136,8 @@ img{
   flex-direction: row;
   justify-content: space-around;
   width: 60vw;
+  background-color: rgba(0,0,0,0.0);
+  color: white;
 }
 
 .sponsorinfo{

@@ -17,12 +17,14 @@ export default class GamersList extends Component{
       {gamersData.map((gamer, i) => {
         return (
           <Well key={i} bsSize="large" className="gamercard">
-            <img src={gamer.picture} />
+            <div>
+              <h2>{gamer.name}</h2>
+              <img src={gamer.picture} />
+            </div>
             <div className="gamerinfo">
-              <h3>{gamer.name}</h3>
-              <h5>What I play.</h5>
+              <h5>What I play:</h5>
               <p>I go by {gamer.gamer_tag} on {gamer.game}, {gamer.platform}</p>
-              <h5>Here are my accomplishments</h5>
+              <h5>What I have done:</h5>
               {gamer.accomplishments.map((accomplishment, i) => {
                 return (
                   <div key={i}>
@@ -35,7 +37,7 @@ export default class GamersList extends Component{
               <div className="gamersocial">
                 {gamer.social.map((social, i) => {
                   return (
-                    <a key={i} href={social.link}>{social.platform}</a>
+                    <a key={i} href={social.link}>Click here to go to my {social.platform}</a>
                   )
                 })}
               </div>

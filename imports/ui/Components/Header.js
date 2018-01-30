@@ -19,15 +19,18 @@ import GamerLogin from './GamerLogin';
 import GamerCreateAccount from './GamerCreateAccount';
 import '../App.css';
 
+// import logo from '../logo.png'
+
+
 export default class Header extends Component {
 
   render() {
     return (<div className="header">
-      {/* <img src={myLogo} alt="eSponsor logo" /> */}
+
       <Navbar inverse collapseOnSelect>
         <Navbar.Header>
           <Navbar.Brand>
-            <a>eSponsor</a>
+            <img src="https://raw.githubusercontent.com/LukeRomberg/eSponsor-API/master/imports/ui/logo.png"/>
           </Navbar.Brand>
           <Navbar.Toggle/>
         </Navbar.Header>
@@ -53,7 +56,10 @@ export default class Header extends Component {
             }
             {!this.props.user ? (
               <NavDropdown title="Create Account" id="basic-nav-dropdown">
-                <GamerCreateAccount client={this.props.client}/>
+                <MenuItem eventKey={1}>I'm a Gamer</MenuItem>
+                <MenuItem divider />
+                <MenuItem eventKey={1}>I'm a Sponsor</MenuItem>
+                {/* <GamerCreateAccount client={this.props.client}/> */}
               </NavDropdown>
             ) : <NavItem eventKey={1}>My Account</NavItem>}
           </Nav>

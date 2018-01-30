@@ -38,18 +38,15 @@ class GamerLogin extends Component {
             <HelpBlock>Enter a password</HelpBlock>
             <FormControl type="password"
               placeholder="Password" ref={(input) => this.password = input}  />
-            <HelpBlock>Which game do you want associated with your profile?</HelpBlock>
+            <HelpBlock>What name do you want to be associated with your account?</HelpBlock>
             <FormControl type="text"
-              placeholder="Rocket League" ref={(input) => this.game = input}  />
-            <HelpBlock>Which platform do you play on?</HelpBlock>
+              placeholder="G2 eSports" ref={(input) => this.game = input}  />
+            <HelpBlock>What type of sponsor are you?</HelpBlock>
             <FormControl type="text"
-                placeholder="PC" ref={(input) => this.platform = input}  />
-            <HelpBlock>What is your gamertag in that game?</HelpBlock>
+                placeholder="I have multiple teams, accross several games and platforms." ref={(input) => this.platform = input}  />
+            <HelpBlock>What kind of gamers are you looking for?</HelpBlock>
             <FormControl type="text"
-              placeholder="TheDutchDragon" ref={(input) => this.gamer_tag = input}  />
-            <HelpBlock>Which platform do you play on?</HelpBlock>
-            <FormControl type="text"
-                placeholder="PC" ref={(input) => this.platform = input}  />
+              placeholder="Fun ones that kick butt!" ref={(input) => this.gamer_tag = input}  />
           </FormGroup>
           <Button bsStyle="success" type="submit" className="gamerregisterbutton">Register</Button>
         </form>

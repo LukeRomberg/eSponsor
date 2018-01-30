@@ -11,17 +11,20 @@ import ResolutionForm from './Components/ResolutionForm';
 import GoalForm from './Components/GoalForm';
 import SponsorList from './Components/SponsorList';
 import GamersList from './Components/GamersList';
-// import myLogo from 'logo.png';
+import GamerCreateAccount from './Components/GamerCreateAccount';
+import SponsorCreateAccount from './Components/SponsorCreateAccount';
 
 
 const App = ({ loading, resolutions, client, user }) => {
 if(loading) return null;
 return (
-  <div>
+  <div className="center">
     <Header client={client} user={user}/>
     <Main client={client}/>
     <SponsorList />
     <GamersList />
+    {/* <GamerCreateAccount /> */}
+    {/* <SponsorCreateAccount /> */}
     {/* <ResolutionForm client={client}/>
     <ul>
       {resolutions.map((resolution, i) => (

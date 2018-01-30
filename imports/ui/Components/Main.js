@@ -7,10 +7,8 @@ import '../App.css'
 
 const Main = ({data}) => {
 return (
-  <PageHeader className="welcome">
-    Welcome to eSponsor<br />
-    <small>Where success meets talent</small>
-  </PageHeader>
+  <div className="welcome">
+  </div>
 )};
 
 const hiQuery = gql `
