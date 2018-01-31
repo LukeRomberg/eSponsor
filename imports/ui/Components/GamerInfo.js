@@ -6,7 +6,7 @@ import {
   withApollo
 } from 'react-apollo';
 import { Well } from 'react-bootstrap';
-import {gamersData} from '../../api/gamers/gamersdata.js';
+import { gamersData as gamer } from '../../api/gamers/gamersdata.js';
 import '../App.css';
 import { Link } from 'react-router-dom';
 
@@ -15,19 +15,16 @@ export default class GamersList extends Component{
   render(){
   return(
     <div className="gamerslist">
-      <h1>Meet the Gamers</h1>
-      {gamersData.map((gamer, i) => {
-        return (
-          <Well key={i} bsSize="large" className="gamercard">
+      <h1>{gamer[0].name}</h1>
+          <Well className="singlegamercard">
             <div>
-              <h2><Link to='/gamers/rizzo'>{gamer.name}</Link></h2>
-              <img src={gamer.picture} />
+              <img src={gamer[0].picture} />
             </div>
-            <div className="gamerinfo">
+            <div className="singlegamerinfo">
               <h5>What I play:</h5>
-              <p>I go by {gamer.gamer_tag} on {gamer.game}, {gamer.platform}</p>
+              <p>I go by {gamer[0].gamer_tag} on {gamer[0].game}, {gamer[0].platform}</p>
               <h5>What I have done:</h5>
-              {gamer.accomplishments.map((accomplishment, i) => {
+              {gamer[0].accomplishments.map((accomplishment, i) => {
                 return (
                   <div key={i}>
                     <h6>{accomplishment.name}</h6>
@@ -35,14 +32,24 @@ export default class GamersList extends Component{
                   </div>
                 )
               })}
-              {/* <h5>Here's my social media:</h5>
+              <h5>Here's my social media:</h5>
               <div className="gamersocial">
-                {gamer.social.map((social, i) => {
+                {gamer[0].social.map((social, i) => {
                   return (
                     <a key={i} href={social.link}>Click here to go to my {social.platform}</a>
                   )
                 })}
-              </div> */}
+              </div>
+              <h5>What I'm looking for</h5>
+                {gamer[0].needs.map((need,i)=>{
+                  return (
+                    <div key={i} className="needslist">
+                    <p>I need: {need.need}</p>
+                    <p>It costs: {need.cost}</p>
+                    <p>What you get: {need.return}</p>
+                    </div>
+                  )
+                })}
             </div>
           </Well>
         )

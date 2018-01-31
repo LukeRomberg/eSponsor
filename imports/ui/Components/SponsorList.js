@@ -9,9 +9,7 @@ import {
 import { Well } from 'react-bootstrap';
 import '../App.css'
 
-export default class SponsorList extends Component{
-  render(){
-  return(
+const SponsorList = () => (
     <div className="sponsorslist">
       <h1>Meet the sponsors</h1>
       {sponsorList.sponsors.map((sponsor,i) => {
@@ -29,5 +27,6 @@ export default class SponsorList extends Component{
         )
       })}
     </div>
-  )}
-}
+)
+
+export default SponsorList;

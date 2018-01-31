@@ -24,6 +24,15 @@ const gamersData = [
       name: 'RLCS Season 4 - Finals',
       description: '4th place on team G2 with teammates Kronovi and JKnapps',
     }],
+    needs: [{
+      need: 'New Twitch Sponsor',
+      cost: 'New computer monitors, and a gamer chair',
+      return: 'A shoutout during every commercial break on my stream.'
+    },{
+      need: 'Team for competitive play',
+      cost: '10k/year',
+      return: 'See my list of accomplishments.',
+    }]
   },
   {
     id: 2,

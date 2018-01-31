@@ -18,6 +18,7 @@ import {
 import GamerLogin from './GamerLogin';
 import GamerCreateAccount from './GamerCreateAccount';
 import '../App.css';
+import { Link } from 'react-router-dom'
 
 // import logo from '../logo.png'
 
@@ -37,10 +38,14 @@ export default class Header extends Component {
         <Navbar.Collapse>
           <Nav>
             <NavItem>
-               Sponsors
+              <Link to='/sponsors'>
+                 Sponsors
+               </Link>
              </NavItem>
              <NavItem>
-               Gamers
+               <Link to='/'>
+                Gamers
+               </Link>
              </NavItem>
           </Nav>
           <Nav pullRight>
@@ -56,9 +61,9 @@ export default class Header extends Component {
             }
             {!this.props.user ? (
               <NavDropdown title="Create Account" id="basic-nav-dropdown">
-                <MenuItem eventKey={1}>I'm a Gamer</MenuItem>
+                <MenuItem eventKey={1}><Link to='/gamers/signup'>I'm a Gamer</Link></MenuItem>
                 <MenuItem divider />
-                <MenuItem eventKey={1}>I'm a Sponsor</MenuItem>
+                <MenuItem eventKey={1}><Link to='/sponsors/signup'>I'm a Sponsor</Link></MenuItem>
                 {/* <GamerCreateAccount client={this.props.client}/> */}
               </NavDropdown>
             ) : <NavItem eventKey={1}>My Account</NavItem>}
