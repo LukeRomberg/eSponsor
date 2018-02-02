@@ -52,6 +52,19 @@ img{
   color: #27c727;
 }
 
+.dropdown-menu{
+  background-color: #4f4f4f;
+}
+
+.help-block{
+  color: white;
+}
+
+.form-group{
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
 .nav{
   margin: 0;
   padding: 0;

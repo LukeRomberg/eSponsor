@@ -61,9 +61,9 @@ export default class Header extends Component {
             }
             {!this.props.user ? (
               <NavDropdown title="Create Account" id="basic-nav-dropdown">
-                <MenuItem eventKey={1}><Link to='/gamers/signup'>I'm a Gamer</Link></MenuItem>
+                <MenuItem className="createaccountdrop" eventKey={1}><Link to='/gamers/signup'>I'm a Gamer</Link></MenuItem>
                 <MenuItem divider />
-                <MenuItem eventKey={1}><Link to='/sponsors/signup'>I'm a Sponsor</Link></MenuItem>
+                <MenuItem className="createaccountdrop" eventKey={1}><Link to='/sponsors/signup'>I'm a Sponsor</Link></MenuItem>
                 {/* <GamerCreateAccount client={this.props.client}/> */}
               </NavDropdown>
             ) : <NavItem eventKey={1}>My Account</NavItem>}
